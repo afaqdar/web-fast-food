@@ -57,6 +57,14 @@
     color: var(--black);
     
 }
+.icons-bar a span{
+    -webkit-transition: width 2s,-webkit-transform 2s;
+}
+.icons-bar a span:hover{
+    color: var(--black);
+    display: inline-block;
+    -webkit-transform:rotateY(-360deg);
+}
 .top-gray-bar{
     position: absolute;
     top: 50px;
@@ -86,8 +94,8 @@
 }
 .gray-bar-names a:hover{
     background-color: var(--primary-color);
-    padding: 2px 10px;
-    border-radius: 8px;
+    padding: 6px 12px;
+    border-radius: 6px;
 }
 .gray-bar-names a:nth-child(1){
     background-color: var(--primary-color);
@@ -202,3 +210,65 @@
     transform: translate(-50%,-50%);
 }
 
+.menu-inner-wrapper{
+    display: flex;
+}
+.menu-inner-wrapper .menu-card{
+    width: 25%;
+    position: relative;
+    margin: 0 10px;
+}
+.overlay{
+    position: absolute;
+    inset: 0;
+    background-color: var(--black-transparent);
+}
+.overlay-hover{
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+}
+.menu-inner-wrapper .menu-card img{
+    width: 100%;
+    display: block;
+}
+.menu-inner-wrapper .menu-card h2{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--white);
+}
+
+
+.menu-card:hover .overlay-hover{
+    opacity: 1;
+    transition: all 1s;
+}
+.menu-card:hover .overlay h2{
+    display: none;
+}
+.overlay-hover .rect{
+    width: 200px;
+    height: 200px;
+    border: 2px solid #fff;
+    rotate: 45deg;
+    position: absolute;
+    top: 72%;
+    left: 16%;
+    transform: translate(-50%, -50%);
+    scale: 0;
+    transition: scale 1s;
+}
+.menu-card:hover .overlay-hover .rect{
+    scale: 1;
+}
+.overlay-hover p{
+    position: absolute;
+    top: 50%;
+    color: #fff;
+    font-size: 22px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
